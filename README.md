@@ -101,29 +101,51 @@ ER diagram
     | Biography              |
     +------------------------+
 
+### Step 3: Create the Backend in .NET Framework
+##### 3.1. Create an API Project in .NET Framework
+Open Visual Studio.
 
-### Paso 3: Crear el backend en .NET Framework
+Create a new project of type ASP.NET Web Application (.NET Framework).
 
-##### 3.1. Crear un proyecto de API en .NET Framework
-Abre Visual Studio.
+Select Web API as the project type.
 
-Crea un nuevo proyecto de tipo ASP.NET Web Application (.NET Framework). 
-        
-Selecciona Web API como el tipo de proyecto.
+##### 3.2. Configure Entity Framework
+Install Entity Framework using NuGet Package Manager.
 
-##### 3.2. Configurar Entity Framework
-Instala Entity Framework mediante NuGet Package Manager.
-        
-Install-Package EntityFramework
+    Install-Package EntityFramework
 
-Configura el DbContext y las entidades.
+Configure the **DbContext** and entities.
 
-En el proyecto crear una carpeta llamada Data
+In the project, create a folder named **Data**.
 
-Dentro de ella crear la clase AppDbContext.cs
+Inside it, create the **AppDbContext.cs** class.
 
-Agregar la string de conexion al Web.config, agregarla dentro de la etiqueta configuration
+Add the connection string to **Web.config**, placing it inside the configuration tag.
 
           <connectionStrings>
             <add name="AppDbContext" connectionString="Data Source=localhost;Initial Catalog=ShoppingCartDB;Integrated Security=True;" providerName="System.Data.SqlClient" />
           </connectionStrings>
+
+
+ Inside the **Data** folder, create a folder named **Entities**. These classes will contain the models that represent the tables in the database. These models should have the same structure, attributes, and equivalent data types from SQL to C#.
+
+
+##### 3.3. Create Controllers for the API
+In the **Models** folder, create a new folder named **Dtos**.
+
+DTOs are crucial for managing data transfer efficiently and securely in an application. They provide a means to:
+
+* Encapsulate and structure data.
+* Improve performance by reducing data transfer sizes.
+* Enhance security by hiding sensitive information.
+* Separate concerns and decouple application layers.
+* Simplify communication and maintain flexibility in data management.
+
+Inside the Dtos folder, create the classes **GalleryDTO**, **ArtistDTO**, and **ArtworkDTO**.
+
+
+
+
+
+
+        
