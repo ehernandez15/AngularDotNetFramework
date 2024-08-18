@@ -1,0 +1,19 @@
+# Ignore NuGet Packages folder
+packages/
+
+# Ignore Visual Studio .vs folder
+.vs/
+
+# Ignore build outputs
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore web publish folders
+*/.publish/
