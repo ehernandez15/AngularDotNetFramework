@@ -15,7 +15,7 @@ namespace WebBEArtGallery.Controllers.API
         private AppDbContext db = new AppDbContext();
 
         [HttpPost, Route("CreateArtist")]//Set a custom route for the endpoint 
-        public IHttpActionResult CreateGallery(ArtistDTO createArtistDTO)
+        public IHttpActionResult CreateArtist(ArtistDTO createArtistDTO)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -80,7 +80,6 @@ namespace WebBEArtGallery.Controllers.API
             artist.Nationality = updatedArtist.Artist_Nationality;
             artist.Biography = updatedArtist.Artist_Biography;
 
-            // Actualizar el contexto de la base de datos
             db.Entry(artist).State = EntityState.Modified;
 
             try

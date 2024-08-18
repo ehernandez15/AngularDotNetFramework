@@ -30,7 +30,7 @@ namespace WebBEArtGallery.Controllers.API
                     EstablishmentDate = createGalleryDto.GalleryDateOfEstablishment,
                     Description = createGalleryDto.GalleryDescription,
 
-                    //Just for practice, the Galleries will be able to be created with a set of Artworks
+                    //For practice purposes, Galleries will be able to be created with a set of Artworks.
                     Artworks = createGalleryDto.Exhibited_Artworks.Select(aw => new Artwork(aw)).ToList()
                 };
 

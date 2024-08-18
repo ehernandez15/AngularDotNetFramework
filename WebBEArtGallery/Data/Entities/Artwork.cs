@@ -21,6 +21,22 @@ namespace WebBEArtGallery.Data.Entities
             EstimatedValue = artwork.EstimatedValue;
         }
 
+        public void UpdateArtwork(ArtworkDTO artwork)
+        {
+            if (artwork == null)
+                throw new ArgumentNullException(nameof(artwork));
+
+            Title = artwork.Name;
+            CreationDate = artwork.CreationDate;
+            Type = artwork.Type;
+            Description = artwork.Description;
+            EstimatedValue = artwork.EstimatedValue;
+            ArtistId = artwork.Artist_Code;
+            GalleryId = artwork.Gallery_Code;
+        }
+
+
+
         [Key]
         public int ArtworkId { get; set; }  // Primary Key
 

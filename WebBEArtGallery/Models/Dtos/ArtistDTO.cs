@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Xml.Linq;
 using WebBEArtGallery.Data.Entities;
 
 namespace WebBEArtGallery.Models.Dtos
@@ -23,6 +21,7 @@ namespace WebBEArtGallery.Models.Dtos
             Artist_DeathDate = artist.DeathDate;
             Artist_Nationality = artist.Nationality;
             Artist_Biography = artist.Biography;
+            Created_Artworks = artist.Artworks.Select(aw => new ArtworkDTO(aw)).ToList();
         }
 
         public int Id { get; set; }  
