@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using WebBEArtGallery.Data.Entities;
 using WebBEArtGallery.Data;
 using WebBEArtGallery.Models.Dtos;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 
 namespace WebBEArtGallery.Controllers.API
 {
@@ -58,6 +56,55 @@ namespace WebBEArtGallery.Controllers.API
                 return InternalServerError(ex);
             }
 
+        }
+
+        // PUT: api/artists/{id}
+        [HttpPut, Route("UpdateArtist/{id:int}")]
+        public IHttpActionResult UpdateArtist(int id, [FromBody] ArtistDTO updatedArtist)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var artist = db.Artists.SingleOrDefault(a => a.ArtistId == id);
+            if (artist == null)
+            {
+                return NotFound();
+            }
+
+           
+            artist.Name = updatedArtist.Artist_Name;
+            artist.BirthDate = updatedArtist.Artist_BirthDate;
+            artist.DeathDate = updatedArtist.Artist_DeathDate;
+            artist.Nationality = updatedArtist.Artist_Nationality;
+            artist.Biography = updatedArtist.Artist_Biography;
+
+            // Actualizar el contexto de la base de datos
+            db.Entry(artist).State = EntityState.Modified;
+
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ArtistExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return Ok("Artist updated");
+        }
+
+        private bool ArtistExists(int id)
+        {
+            return db.Artists.Any(e => e.ArtistId == id);
         }
     }
 }
