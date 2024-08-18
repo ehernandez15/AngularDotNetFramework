@@ -162,11 +162,21 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\API\ArtistAPIController.cs" />
+    <Compile Include="Controllers\API\ArtworkAPIController.cs" />
+    <Compile Include="Controllers\API\GalleryAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Data\AppDbContext.cs" />
+    <Compile Include="Data\Entities\Artist.cs" />
+    <Compile Include="Data\Entities\Artwork.cs" />
+    <Compile Include="Data\Entities\Gallery.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Dtos\ArtistDTO.cs" />
+    <Compile Include="Models\Dtos\ArtworkDTO.cs" />
+    <Compile Include="Models\Dtos\GalleryDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -237,7 +247,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\bootstrap.min.js.map" />

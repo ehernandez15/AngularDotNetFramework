@@ -130,7 +130,7 @@ Add the connection string to **Web.config**, placing it inside the configuration
  Inside the **Data** folder, create a folder named **Entities**. These classes will contain the models that represent the tables in the database. These models should have the same structure, attributes, and equivalent data types from SQL to C#.
 
 
-##### 3.3. Create Controllers for the API
+##### 3.3. Create the DTOs for each DB entity
 In the **Models** folder, create a new folder named **Dtos**.
 
 DTOs are crucial for managing data transfer efficiently and securely in an application. They provide a means to:
@@ -141,7 +141,24 @@ DTOs are crucial for managing data transfer efficiently and securely in an appli
 * Separate concerns and decouple application layers.
 * Simplify communication and maintain flexibility in data management.
 
-Inside the Dtos folder, create the classes **GalleryDTO**, **ArtistDTO**, and **ArtworkDTO**.
+Inside the **Dtos** folder, create the classes **GalleryDTO**, **ArtistDTO**, and **ArtworkDTO**.
+
+##### 3.4. Create Controllers for the API
+
+Install Microsoft.AspNet.WebApi from NuGet Package Manager.
+
+Within the **Controllers** folder of the project, create a folder named **API**. Inside that folder, create an API controller for each of the entities in the database.
+
+    Right-click on the folder, select Add Controller, then 
+    choose Web API Controller - Empty.
+
+* **GalleryAPIController**
+* **ArtworkAPIController**
+* **ArtistAPIController**
+
+
+
+
 
 
 

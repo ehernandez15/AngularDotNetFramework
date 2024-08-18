@@ -1,11 +1,26 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using WebBEArtGallery.Models.Dtos;
 
 namespace WebBEArtGallery.Data.Entities
 {
     public class Artwork
     {
+        public Artwork(){}
+
+        public Artwork(ArtworkDTO artwork)
+        {
+            if (artwork == null)
+                throw new ArgumentNullException(nameof(artwork));
+
+            Title = artwork.Name;
+            CreationDate = artwork.CreationDate;
+            Type = artwork.Type;
+            Description = artwork.Description;
+            EstimatedValue = artwork.EstimatedValue;
+        }
+
         [Key]
         public int ArtworkId { get; set; }  // Primary Key
 
