@@ -164,6 +164,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\API\ArtistAPIController.cs" />
     <Compile Include="Controllers\API\ArtworkAPIController.cs" />
+    <Compile Include="Controllers\API\DefaultController.cs" />
     <Compile Include="Controllers\API\GalleryAPIController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
