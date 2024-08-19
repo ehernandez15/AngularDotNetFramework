@@ -119,5 +119,15 @@ To test the endpoints, you can import the Postman collection in the repository n
     AngularDotNetFramework.postman_collection.json
 
 
+Make sure to configure CORS to allow the Angular project to establish connection. Download the following package 
+using NuGet package manager 
+
+    Install-Package Microsoft.AspNet.WebApi.Cors
+
+Update the configuration in WebApiConfig file to allow localhost:4200 which is the default port where Angular projects use in local. 
+
+     var cors = new EnableCorsAttribute("http://localhost:4200", "*", "*");
+            config.EnableCors(cors);
+
 
 

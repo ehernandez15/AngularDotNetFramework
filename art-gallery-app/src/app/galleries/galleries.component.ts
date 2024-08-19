@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-galleries',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './galleries.component.css'
 })
 export default class GalleriesComponent {
+
+  public apiService = inject(ApiService);
+
+  constructor(){
+    console.log(this.apiService.getArtists())
+  }
 
 }
