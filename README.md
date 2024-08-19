@@ -52,5 +52,8 @@ Add the official NuGet source:
 * Package Manager: npm 10.7.0
 
 
+### Step 2 & 3: (DB & Backend) WebBEArtGallery
+
+### Step 4: (Frontend) art-gallery-app
 
         
