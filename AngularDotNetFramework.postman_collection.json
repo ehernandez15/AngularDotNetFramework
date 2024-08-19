@@ -1,0 +1,237 @@
+{
+	"info": {
+		"_postman_id": "cc5b8fc2-965f-4e16-b3db-6ec36188e4f9",
+		"name": "AngularDotNetFramework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4243287"
+	},
+	"item": [
+		{
+			"name": "Galleries",
+			"item": [
+				{
+					"name": "GetGalleries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44366/api/Galleries",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44366",
+							"path": [
+								"api",
+								"Galleries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateGallery",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Id\": 1,\r\n    \"GalleryName\": \"Modern Art Gallery\",\r\n    \"GalleryAddress\": \"123 Art Street, Cityville, ST 12345\",\r\n    \"GalleryDateOfEstablishment\": \"2000-05-15T00:00:00Z\",\r\n    \"GalleryDescription\": \"A contemporary gallery showcasing modern art.\",\r\n    \"Exhibited_Artworks\": [\r\n        {\r\n            \"Id\": 101,\r\n            \"Name\": \"Starry Night\",\r\n            \"CreationDate\": \"1889-06-01T00:00:00Z\",\r\n            \"Type\": \"Painting\",\r\n            \"Description\": \"A famous painting by Vincent van Gogh.\",\r\n            \"Gallery_Code\": 1,\r\n            \"Artist_Code\": 1001,\r\n            \"EstimatedValue\": 1000000.00\r\n        },\r\n        {\r\n            \"Id\": 102,\r\n            \"Name\": \"The Persistence of Memory\",\r\n            \"CreationDate\": \"1931-07-01T00:00:00Z\",\r\n            \"Type\": \"Painting\",\r\n            \"Description\": \"A surreal painting by Salvador Dalí.\",\r\n            \"Gallery_Code\": 1,\r\n            \"Artist_Code\": 1002,\r\n            \"EstimatedValue\": 2000000.00\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44366/api/Galleries/CreateGallery",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44366",
+							"path": [
+								"api",
+								"Galleries",
+								"CreateGallery"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artists",
+			"item": [
+				{
+					"name": "GetArtists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44366/api/Artists",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44366",
+							"path": [
+								"api",
+								"Artists"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateArtist",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Artist_Name\": \"Vincent van Gogh\",\r\n  \"Artist_BirthDate\": \"1853-03-30\",\r\n  \"Artist_DeathDate\": \"1870-03-30\",\r\n  \"Artist_Nationality\": \"Netherlands\",\r\n  \"Artist_Biography\": \"Vincent van Gogh was a Dutch post-impressionist painter who is among the most famous and influential figures in the history of Western art.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44366/api/Artists/CreateArtist",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44366",
+							"path": [
+								"api",
+								"Artists",
+								"CreateArtist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateArtist",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Artist_Name\": \"Vincent van Gogh\",\r\n  \"Artist_BirthDate\": \"1853-03-30\",\r\n  \"Artist_DeathDate\": \"1910-03-30\",\r\n  \"Artist_Nationality\": \"Netherlands\",\r\n  \"Artist_Biography\": \"Vincent van Gogh was a Dutch post-impressionist painter who is among the most famous and influential figures in the history of Western art.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44366/api/Artists/UpdateArtist/2",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44366",
+							"path": [
+								"api",
+								"Artists",
+								"UpdateArtist",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Artworks",
+			"item": [
+				{
+					"name": "GetArtworks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:44366/api/Artworks",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44366",
+							"path": [
+								"api",
+								"Artworks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateArtwork",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"Name\": \"The Persistence of Memory\",\r\n  \"CreationDate\": \"1931-01-01\",\r\n  \"Type\": \"Oil on Canvas\",\r\n  \"Description\": \"A famous painting by Salvador Dalí, depicting melting clocks in a surreal landscape.\",\r\n  \"Gallery_Code\": 1,\r\n  \"Artist_Code\": 1,\r\n  \"EstimatedValue\": 45000000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44366/api/Artworks/CreateArtwork",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44366",
+							"path": [
+								"api",
+								"Artworks",
+								"CreateArtwork"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateArtwork",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"Name\": \"The Persistence of Memory\",\r\n        \"CreationDate\": \"1931-01-01T00:00:00\",\r\n        \"Type\": \"Oil on Canvas\",\r\n        \"Description\": \"A famous painting by Salvador Dalí, depicting melting clocks in a surreal landscape.\",\r\n        \"Gallery_Code\": 2,\r\n        \"Artist_Code\": 2,\r\n        \"EstimatedValue\": 43000000.00\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://localhost:44366/api/Artworks/UpdateArtwork/5",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "44366",
+							"path": [
+								"api",
+								"Artworks",
+								"UpdateArtwork",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
