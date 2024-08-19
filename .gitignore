@@ -17,3 +17,7 @@ obj/
 
 # Ignore web publish folders
 */.publish/
+
+
+art-gallery-app/.vscode/
+art-gallery-app/node_modules/
