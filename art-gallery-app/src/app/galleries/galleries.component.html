@@ -1,1 +1,15 @@
-<p>galleries works!</p>
+<div class="container">
+    <h1>Galleries List</h1>
+    <div *ngIf="galleriesList.length === 0" class="no-artists">
+      No galleries available.
+    </div>
+    <ul class="artists-list">
+      <li *ngFor="let gallery of galleriesList" class="artist-item">
+        <h2>{{ gallery.Id }}</h2>
+        <h2>{{ gallery.GalleryName }}</h2>
+        <h2>{{ gallery.GalleryAddress }}</h2>
+        <h2>{{ gallery.GalleryDateOfEstablishment }}</h2>
+        <h2>{{ gallery.GalleryDescription }}</h2>
+      </li>
+    </ul>
+  </div>

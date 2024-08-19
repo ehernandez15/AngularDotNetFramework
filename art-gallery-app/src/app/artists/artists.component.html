@@ -1,1 +1,16 @@
-<p>artists works!</p>
+<div class="container">
+    <h1>Artists List</h1>
+    <div *ngIf="artistsList.length === 0" class="no-artists">
+      No artists available.
+    </div>
+    <ul class="artists-list">
+      <li *ngFor="let artist of artistsList" class="artist-item">
+        <h2>{{ artist.Id }}</h2>
+        <h2>{{ artist.Artist_Name }}</h2>
+        <h2>{{ artist.Artist_BirthDate }}</h2>
+        <h2>{{ artist.Artist_DeathDate }}</h2>
+        <h2>{{ artist.Artist_Nationality }}</h2>
+        <h2>{{ artist.Artist_Biography }}</h2>
+      </li>
+    </ul>
+  </div>

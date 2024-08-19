@@ -1,1 +1,16 @@
-<p>artworks works!</p>
+<div class="container">
+    <h1>Artworks List</h1>
+    <div *ngIf="artworksList.length === 0" class="no-artists">
+      No artworks available.
+    </div>
+    <ul class="artists-list">
+      <li *ngFor="let artwork of artworksList" class="artist-item">
+        <h2>{{ artwork.Id }}</h2>
+        <h2>{{ artwork.Name }}</h2>
+        <h2>{{ artwork.Type }}</h2>
+        <h2>{{ artwork.CreationDate }}</h2>
+        <h2>{{ artwork.Description }}</h2>
+        <h2>{{ artwork.EstimatedValue }}</h2>
+      </li>
+    </ul>
+  </div>

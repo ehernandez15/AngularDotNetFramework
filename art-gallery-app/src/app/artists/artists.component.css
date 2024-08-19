@@ -1,0 +1,40 @@
+/* home-artists.component.css */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .no-artists {
+    text-align: center;
+    color: #777;
+    font-size: 18px;
+  }
+  
+  .artists-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .artist-item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .artist-item h2 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+  
+  .artist-item p {
+    margin: 5px 0;
+  }
+  
