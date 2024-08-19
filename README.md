@@ -156,9 +156,21 @@ Within the **Controllers** folder of the project, create a folder named **API**.
 * **ArtworkAPIController**
 * **ArtistAPIController**
 
+Add the corresponding logic for each controller.
 
+Ensure that the configuration in Global.asax.cs contains the line
 
+    GlobalConfiguration.Configure(WebApiConfig.Register);
 
+This line should be added before the line
+
+    RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+Otherwise, the route configuration for the Web API controllers will be overwritten.                
+
+To test the endpoints, you can import the Postman collection in the repository named 
+
+    AngularDotNetFramework.postman_collection.json
 
 
 
