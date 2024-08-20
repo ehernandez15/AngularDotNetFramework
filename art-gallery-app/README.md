@@ -55,3 +55,16 @@ Configure the Routes values in app.routes.ts with the following configuration.
             pathMatch: 'full'
         }
 
+
+
+##### 4.4: Create the DTOs 
+
+Create a folder called **models** inside the app folder. 
+
+Create the following .ts files: 
+
+* artistDTO.ts
+* artworkDTO.ts
+* galleryDTO.ts
+
+The DTOs need to match the backend DTOs to correctly map the API responses.
