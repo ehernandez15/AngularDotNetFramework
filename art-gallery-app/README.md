@@ -1,27 +1,57 @@
-# ArtGalleryApp
+### Step 4: ArtGalleryApp
+
+##### Step 4.1: Creating the Angular project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
 
-## Development server
+Run the following commands in your terminal. 
+
+    ng new art-gallery-app
+    cd art-gallery-app
+    ng serve
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+##### 4.2: Creating the components 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Create the following components: 
 
-## Running end-to-end tests
+    ng generate component artists
+    ng generate component artworks
+    ng generate component galleries
+    ng generate component home
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+Create the service to consume the backend APIs
+    
+    ng generate service services/api
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+##### 4.3: Route the componets
+
+Configure the Routes values in app.routes.ts with the following configuration. 
+
+        {
+            path: 'artists',
+            loadComponent: () => import('./artists/artists.component'),
+            children: []
+        },
+        {
+            path: 'artworks',
+            loadComponent: () => import('./artworks/artworks.component'),
+            children: []
+        },
+        {
+            path: 'galleries',
+            loadComponent: () => import('./galleries/galleries.component'),
+            children: []
+        },
+        {
+            path: '',
+            loadComponent: () => import('./home/home.component'),
+            pathMatch: 'full'
+        }
+
