@@ -1,16 +1,62 @@
-<div class="container">
-    <h1>Artists List</h1>
-    <div *ngIf="artistsList.length === 0" class="no-artists">
-      No artists available.
+<div class="artist-list-container">
+    <div class="header">
+        <h2>Artists</h2>
+        <button class="btn-add-artist" (click)="onAddArtist()" *ngIf="!showForm">+</button>
+        <button class="btn-edit" (click)="onCancel()" *ngIf="showForm">Cancel</button>
     </div>
-    <ul class="artists-list">
-      <li *ngFor="let artist of artistsList" class="artist-item">
-        <h2>{{ artist.Id }}</h2>
-        <h2>{{ artist.Artist_Name }}</h2>
-        <h2>{{ artist.Artist_BirthDate }}</h2>
-        <h2>{{ artist.Artist_DeathDate }}</h2>
-        <h2>{{ artist.Artist_Nationality }}</h2>
-        <h2>{{ artist.Artist_Biography }}</h2>
-      </li>
-    </ul>
-  </div>
+</div>
+
+<div class="artist-list-container" *ngIf="!showForm">
+    <div class="artist-card" *ngFor="let artist of artistsList">
+        <div class="artist-image">
+          <!-- Placeholder image -->
+          <img src="https://via.placeholder.com/100" alt="Artist Image" />
+        </div>
+        <div class="artist-info">
+          <h3>{{ artist.Id }}. {{ artist.Artist_Name }}</h3>
+          <p><strong>Bio:</strong> {{ artist.Artist_Biography }}</p>
+          <p><strong>Born:</strong> {{ artist.Artist_BirthDate | date }}</p>
+          <p><strong>Dead:</strong> {{ artist.Artist_DeathDate | date }}</p>
+          <p><strong>Country:</strong> {{ artist.Artist_Nationality }}</p>
+        <div class="artist-actions">
+          <button class="btn-edit">Edit</button>
+        </div>
+      </div>
+    </div>    
+</div>
+
+<div class="container-form" *ngIf="showForm">
+    <div class="form-container">
+      <h2>Create Artist</h2>
+      <form [formGroup]="artistForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="artistName">Artist Name</label>
+          <input type="text" id="artistName" class="form-control" formControlName="artistName" placeholder="Enter artist name" />
+        </div>
+  
+        <div class="form-group">
+          <label for="artistBio">Biography</label>
+          <textarea id="artistBio" class="form-control" formControlName="artistBio" placeholder="Enter biography"></textarea>
+        </div>
+  
+        <div class="form-group">
+          <label for="artistBirthDate">Birth Date</label>
+          <input type="date" id="artistBirthDate" class="form-control" formControlName="artistBirthDate" />
+        </div>
+
+        <div class="form-group">
+            <label for="artistDeathDate">Death Date</label>
+            <input type="date" id="artistDeathDate" class="form-control" formControlName="artistDeathDate" />
+          </div>
+  
+        <div class="form-group">
+          <label for="artistNationality">Nationality</label>
+          <input type="text" id="artistNationality" class="form-control" formControlName="artistNationality" placeholder="Enter nationality" />
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Create Artist</button>
+      </form>
+    </div>
+</div>  
+    
+

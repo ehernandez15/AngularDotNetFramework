@@ -21,7 +21,7 @@ namespace WebBEArtGallery.Models.Dtos
             Artist_DeathDate = artist.DeathDate;
             Artist_Nationality = artist.Nationality;
             Artist_Biography = artist.Biography;
-            Created_Artworks = artist.Artworks.Select(aw => new ArtworkDTO(aw)).ToList();
+            Created_Artworks = artist.Artworks == null ? null : artist.Artworks.Select(aw => new ArtworkDTO(aw)).ToList();
         }
 
         public int Id { get; set; }  

@@ -22,6 +22,10 @@ export class ApiService {
     return this.http.get<any>(this.artistsApiUrl);
   }
 
+  createArtists(artist:ArtistDTO):  Observable<ArtistDTO>{
+    return this.http.post<any>(`${this.artistsApiUrl}/CreateArtist`, artist);
+  }
+
   getArtworks(): Observable<ArtworkDTO[]>{
     return this.http.get<any>(this.artworksApiUrl);
   }
